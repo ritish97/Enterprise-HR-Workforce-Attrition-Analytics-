@@ -44,17 +44,6 @@ hr-workforce-analytics/
 ├── requirements.txt
 └── README.md
 ```
-
-## How to run
-Run from the project root folder.
-```bash
-pip install -r requirements.txt
-python python/hr_analytics_pipeline.py     # data + statistical tests
-python excel/generate_excel_model.py       # Excel cost model
-streamlit run app.py                       # interactive dashboard
-```
-**SQL (PostgreSQL):** create a database, run `sql/schema_and_queries.sql` in `psql`, and load the CSV with the `\copy` line shown in the script.
-
 ## Data definitions
 - `overtime_status` = Yes when `overtime_hours` is over 20 per month.
 - `compa_ratio` = `monthly_income` / job-role band midpoint.
