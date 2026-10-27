@@ -1,9 +1,3 @@
--- ============================================================================
--- Enterprise HR Workforce Attrition & Productivity Engine
--- Star schema + analytical queries (written for PostgreSQL)
--- Source file: data/processed_hr_analytics.csv (1 row per employee)
--- ============================================================================
-
 -- ----------------------------------------------------------------------------
 -- 1. STAGING TABLE (columns match the CSV exactly, in order)
 -- ----------------------------------------------------------------------------
@@ -33,11 +27,6 @@ CREATE TABLE Staging_Employees (
     risk_factors               INT,
     flight_risk_level          VARCHAR(10)
 );
-
--- Load the CSV from psql, run in the project root folder (one line):
-/*
-\copy Staging_Employees FROM 'data/processed_hr_analytics.csv' CSV HEADER
-*/
 
 -- ----------------------------------------------------------------------------
 -- 2. DIMENSIONS AND FACT TABLE
