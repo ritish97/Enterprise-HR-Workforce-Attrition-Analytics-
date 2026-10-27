@@ -1,13 +1,8 @@
-"""Builds excel/hr_compensation_benchmarks.xlsx from data/processed_hr_analytics.csv.
-Sheets: Compensation_Band_Model (per job role) and Attrition_Cost_Calculator (live formulas)."""
 from pathlib import Path
-
 import pandas as pd
 import xlsxwriter
-
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "excel" / "hr_compensation_benchmarks.xlsx"
-
 
 def generate_excel():
     df = pd.read_csv(ROOT / "data" / "processed_hr_analytics.csv")
