@@ -1,0 +1,5 @@
+Test,Statistic,P-Value,Significant,Detail
+Chi-Square: overtime over 20h vs attrition,8.954222264148221,0.002768290154048856,True,Attrition 21.2% vs 13.8%
+Chi-Square: compa-ratio below 0.85 vs attrition,14.724471838305877,0.0001244208302582394,True,Attrition 25.0% vs 14.3%
+Chi-Square: promotion stagnation vs attrition,9.935238853780204,0.0016214439403609928,True,Attrition 26.1% vs 15.4%
+"Welch T-Test: monthly income, left vs stayed",-0.9120654149216944,0.36263600450410316,False,"Avg income 6,955 (left) vs 7,154 (stayed)"
