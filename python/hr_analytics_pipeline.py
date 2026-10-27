@@ -1,12 +1,4 @@
-"""HR workforce analytics pipeline (synthetic data, seed=42).
-
-Generates 1,000 employees, runs hypothesis tests, engineers risk features and writes
-data/processed_hr_analytics.csv and data/statistical_insights.csv.
-All fields are internally consistent: overtime_status comes from overtime_hours,
-compa_ratio = monthly_income / job-role band midpoint, and years since promotion <= tenure.
-"""
 from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -27,7 +19,6 @@ COLUMNS = ["employee_id", "department", "job_role", "band_midpoint", "tenure_yea
            "overtime_hours", "distance_from_home", "job_satisfaction", "years_since_last_promotion",
            "performance_rating", "overtime_status", "compa_ratio", "promotion_stagnation",
            "attrition_status", "burnout_risk_score", "risk_factors", "flight_risk_level"]
-
 
 def generate(n=1000, seed=42):
     rng = np.random.default_rng(seed)
@@ -70,7 +61,6 @@ def chi_test(name, flag, df):
     r = df.groupby(flag)["attrition_status"].apply(lambda s: (s == "Yes").mean() * 100)
     return {"Test": name, "Statistic": chi2, "P-Value": p, "Significant": p < 0.05,
             "Detail": f"Attrition {r[True]:.1f}% vs {r[False]:.1f}%"}
-
 
 def run_hr_pipeline():
     df = generate()
